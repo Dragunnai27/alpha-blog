@@ -1,4 +1,4 @@
-<h1>Create an articles</h1>
+<h1> Edit exitsting article </h1>
 
 <!-- hiển thị lỗi khi nhập-->
 <% if @article.errors.any? %>
@@ -10,7 +10,7 @@
 </ul>
 <% end %>
 
-<%= form_for @article, url: articles_path do |f| %>
+<%= form_for @article do |f| %>
     <!--bảng nhập title -->
     <p>
         <%= f.label :title %> <br />
