@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
         @article = Articles.new
     end
 
+    # chỉnh sửa bài viết
     def edit
         @article = Articles.find(params[:id])
     end
@@ -42,6 +43,14 @@ class ArticlesController < ApplicationController
     # Tìm theo id để hiển thị    
     def show
         @article = Articles.find(params[:id])
+    end
+
+    # xóa bài viết
+    def destroy
+        @article = Articles.find(params[:id])
+        @article.destroy
+        flash[:notice] = "Article was successfully deletetd"
+        redirect_to articles_path
     end
 
     #Hàm private cho phép truy cập title và description của :articles
