@@ -2,10 +2,11 @@ class ArticlesController < ApplicationController
    before_action :set_articles, only: [:edit, :update, :show, :destroy]
     # gọi ra hàm set_articles trước và chỉ gọi ở 4 hàm edit,update,show,destroy
 
-
+    # xuất ra danh sách của bài viết
     def index
         @list_articles = Articles.all
     end
+
     # tạo một articles mới
     def new
         @article = Articles.new
@@ -13,7 +14,7 @@ class ArticlesController < ApplicationController
 
     # chỉnh sửa bài viết
     def edit
-       #@article = Articles.find(params[:id])
+       #set_articles
     end
 
     # :articles là tên của model
@@ -32,7 +33,7 @@ class ArticlesController < ApplicationController
 
     # Tìm và cập nhật bài viết
     def update
-        #@article = Articles.find(params[:id])
+        #set_articles
         if @article.update(article_params)
             #Hiện thông báo
             flash[:notice] = "Article was successfully updated"
@@ -46,12 +47,12 @@ class ArticlesController < ApplicationController
 
     # Tìm theo id để hiển thị    
     def show
-        #@article = Articles.find(params[:id])
+        #set_articles
     end
 
     # xóa bài viết
     def destroy
-        #@article = Articles.find(params[:id])
+        #set_articles
         @article.destroy
         flash[:notice] = "Article was successfully deletetd"
         redirect_to articles_path
@@ -62,6 +63,7 @@ class ArticlesController < ApplicationController
     def set_articles
         @article = Articles.find(params[:id])
     end
+
     def article_params
         params.require(:articles).permit(:title, :description)
     end
