@@ -14,6 +14,8 @@ gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 gem 'puma', '~> 3.7'
 #Use Bootstrap for stylesheets
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails', '~> 4.3'
+gem 'rails-ujs', '~> 0.1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

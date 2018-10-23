@@ -9,11 +9,17 @@
   </head>
 
   <body>
-
+    <!-- Load code từ file _navigation.html.erb -->
+    <%= render 'layouts/navigation' %>
     <!-- Load code từ file _messages.html.erb -->
     <%= render 'layouts/messages' %>
-
-    <%= yield %>
+     
+    <div class="container">
+      <%= yield %>
+    </div>
+    
+    <!-- Load code từ file _footer.html.erb -->
+    <%= render 'layouts/footer' %>
 
   </body>
 </html>
