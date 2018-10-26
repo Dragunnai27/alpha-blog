@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
         @article = Articles.new(article_params)
         if @article.save
             #Hiện thông báo
-            flash[:notice] = "Article was successfully created"
+            flash[:success] = "Article was successfully created"
             redirect_to article_path(@article)
         else
             #reload lại trang 
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
         #set_articles
         if @article.update(article_params)
             #Hiện thông báo
-            flash[:notice] = "Article was successfully updated"
+            flash[:success] = "Article was successfully updated"
             redirect_to article_path(@article)
         else
             #reload lại trang 
@@ -54,7 +54,7 @@ class ArticlesController < ApplicationController
     def destroy
         #set_articles
         @article.destroy
-        flash[:notice] = "Article was successfully deletetd"
+        flash[:danger] = "Article was successfully deletetd"
         redirect_to articles_path
     end
 
